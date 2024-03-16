@@ -1,0 +1,22 @@
+$main-color:#0aad0a;
+:host{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.btn-up{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999;
+    border: unset;
+    background-color: $main-color;
+    padding: 5px 10px;
+    border-radius: 5px;
+    
+}
+
+.container{
+    margin-top: 60px;
+}

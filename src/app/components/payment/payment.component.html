@@ -1,0 +1,38 @@
+<section class="my-5 w-75 mx-auto">
+    
+    <form [formGroup]="userDataInPaymentForm" (ngSubmit)="checkOutInPayment()" class="p-4 shadow bg-main-light rounded-3">
+        <h1>CheckOut Session</h1>
+        <div>
+            <label for="details">Details</label>
+            <input type="text" id="details" class="form-control" formControlName="details" #detailsInput>
+            <div class="alert alert-danger mt-2 w-50 mx-auto text-center" *ngIf="userDataInPaymentForm.get('details')?.errors&&(userDataInPaymentForm.get('details')?.touched||detailsInput.value.length>0)">
+                <p *ngIf="userDataInPaymentForm.get('details')?.getError('required')" class="p-0 m-0">Your Details Required</p>
+                <p *ngIf="userDataInPaymentForm.get('details')?.getError('minlength')" class="p-0 m-0">Your Details Min Length 5 char</p>
+            </div>
+        </div>
+        <div class="my-3">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" class="form-control" formControlName="phone" #phoneInput>
+            <div class="alert alert-danger mt-2 w-50 mx-auto text-center" *ngIf="userDataInPaymentForm.get('phone')?.errors&&(userDataInPaymentForm.get('phone')?.touched||phoneInput.value.length>0)">
+                <p *ngIf="userDataInPaymentForm.get('phone')?.getError('required')" class="p-0 m-0">Your Phone Required</p>
+                <p *ngIf="userDataInPaymentForm.get('phone')?.getError('pattern')" class="p-0 m-0">Accept Only Egypt Phone Numbers</p>
+            </div>
+        </div>
+        <div>
+            <label for="city">City</label>
+            <input type="text" id="city" class="form-control" formControlName="city" #cityInput>
+            <div class="alert alert-danger mt-2 w-50 mx-auto text-center" *ngIf="userDataInPaymentForm.get('city')?.errors&&(userDataInPaymentForm.get('city')?.touched||cityInput.value.length>0)">
+                <p *ngIf="userDataInPaymentForm.get('city')?.getError('required')" class="p-0 m-0">Your city Required</p>
+            </div>
+        </div>
+        <button class="btn-main my-3" [disabled]="userDataInPaymentForm.errors!=null">
+            <i class="fas fa-spinner fa-spin my-auto me-3" *ngIf="isLoading"></i>
+            CheckOut
+        </button>
+        <div class="alert alert-danger"*ngIf="msgCheckOut">
+            <p class="mb-0 text-center">Your Data Not Correct</p>
+        </div>
+    </form>
+        
+       
+</section>

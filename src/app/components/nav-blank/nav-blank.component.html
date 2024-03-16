@@ -1,0 +1,84 @@
+<section class="fixed-top">
+  
+<nav class="navbar navbar-expand-lg bg-body-tertiary" #navbar>
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"><img src="./assets/freshcart-logo.svg" alt="Fresh Cart Logo"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        
+        <li class="nav-item">
+          <a class="nav-link" routerLink="home" routerLinkActive="active-link">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="products" routerLinkActive="active-link">Products</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="categories" routerLinkActive="active-link">Categories</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="brands" routerLinkActive="active-link">Brands</a>
+        </li>
+        
+        
+      </ul>
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0 d-flex align-items-center">
+
+
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fas fa-user text-main"></i>
+          </a>
+          <ul class="dropdown-menu">
+            <li>
+              <a class="dropdown-item" routerLink="/changePassword">Change Password</a>
+            
+            </li>
+            <li>
+              <a class="dropdown-item" routerLink="/updateUserData">Update Data</a>
+            
+            </li>
+            <li>
+              <a class="dropdown-item" routerLink="/allorders">All Orders</a>
+            
+            </li>
+            
+          </ul>
+        </li>
+
+        <li class="nav-item mx-2 position-relative">
+          <a class="nav-link" routerLink="/wishlist" >
+            <i class="fa-solid fa-heart text-main"></i>
+          <span class="badge bg-info position-absolute end-0 top-0">{{productCountInWishlist}}</span>
+        </a>
+        </li>
+
+
+        <li class="nav-item mx-2 position-relative">
+          <a class="nav-link" routerLink="/cart" >
+            <i class="fas fa-shopping-cart text-main"></i>
+          <span class="badge bg-info position-absolute end-0 top-0">{{productCountInCart}}</span>
+        </a>
+        </li>
+        
+          <li class="nav-item d-flex gap-3 icons">
+            <a href="https://www.facebook.com/mahmoud.elksass.7/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.linkedin.com/in/mahmoud-ismail-370a76215/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://github.com/mahmoudismail2000" target="_blank"><i class="fa-brands fa-github"></i></a>
+            <a href="https://wa.me/+0201067764726" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+
+          </li>
+          <li class="nav-item ms-3">
+            <span class="spanButton" role="button" (click)="signOutHandle()">SignOut</span>
+          </li>
+         
+          
+        </ul>
+      
+    </div>
+  </div>
+</nav>
+</section>

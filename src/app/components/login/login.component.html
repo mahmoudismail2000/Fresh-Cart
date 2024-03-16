@@ -1,0 +1,39 @@
+<section class="w-75 mx-auto my-5">
+    <h1>Login Now :</h1>
+    <form [formGroup]="loginForm" (ngSubmit)="handleForm()">
+        
+        <div>
+            <label for="email">Email</label>
+            <input formControlName="email" type="email" id="email" class="form-control" #refEmail>
+            <div class="alert alert-danger" *ngIf="loginForm.get('email')?.errors&&(loginForm.get('email')?.touched||refEmail.value.length>0)">
+                <p *ngIf="loginForm.get('email')?.getError('required')">Email Required</p>
+                <p *ngIf="loginForm.get('email')?.getError('email')">Email InValid</p>
+                
+            </div>
+        </div>
+        <div>
+            <label for="password">Password</label>
+            <input formControlName="password" type="password" id="password" class="form-control" #refPassword>
+            <div class="alert alert-danger" *ngIf="loginForm.get('password')?.errors&&(loginForm.get('password')?.touched||refPassword.value.length>0)">
+                <p *ngIf="loginForm.get('password')?.getError('required')">Password Required</p>
+                <p *ngIf="loginForm.get('password')?.getError('pattern')">Password Must start With UpperCase Then from 6 to 20 Char</p>
+                
+            </div>
+        </div>
+        
+        
+        <button class="btn-main d-flex ms-auto my-3" [disabled]="loginForm.invalid" >
+            <i class="fas fa-spinner fa-spin my-auto me-3" *ngIf="isLoading"></i>
+            Login
+        </button>
+        <div class="d-flex justify-content-end">
+            <a class="link-underline cursor-pointer" routerLink="/forgotPassword">
+                <i class="fas fa-user-lock me-2"></i>Forget Password
+            </a>
+        </div>
+        <div class="alert alert-danger" *ngIf="errMsg">
+            <p>{{errMsg}}</p>
+        </div>
+    </form>
+</section>
+

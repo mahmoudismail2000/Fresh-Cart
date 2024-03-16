@@ -1,0 +1,27 @@
+i,.spanButton{
+    font-size: 20px;
+}
+
+.fa-shopping-cart,.fa-heart{
+    font-size: 30px !important;
+}
+
+nav{
+    transition: all .7s;
+}
+.fa-user{
+    font-size: 25px;
+    
+}
+.dropdown-menu li a{
+    transition: all .7s;
+    border-radius: 5px;
+    &:hover{
+        background-color: #0aad0a;
+    }
+}
+.icons a{
+    text-decoration: none;
+    color: rgb(41, 41, 41) !important;
+}
+

@@ -1,0 +1,33 @@
+<section class="my-5 py-5">
+    <div class="row d-flex justify-content-center align-items-center shadow rounded-3 py-5">
+        <div class="col-md-2">
+            <div>
+                <owl-carousel-o [options]="detailsSlider">
+
+                    <ng-container *ngFor="let path of productDetails.images">
+                      <ng-template carouselSlide>
+                        <img [src]="path" class="w-100" [alt]="productDetails.title" [title]="productDetails.title">
+                      </ng-template>
+                    </ng-container>
+                
+                  </owl-carousel-o>
+            </div>
+        </div>
+        <div class="col-md-10">
+            <div>
+                <h2>{{productDetails.title}}</h2>
+                <p class="text-muted">{{productDetails.description}}</p>
+                <span class="text-main">{{productDetails.slug}}</span>
+                <div class="d-flex justify-content-between">
+                    <span class="my-2">{{productDetails.price|currency:'e£'}}</span>
+                    <span>
+                        <i class="fa-solid fa-star me-2 rating-color"></i>
+                        {{productDetails.ratingsAverage}}
+                    </span>
+                </div>
+                <button class="btn-main w-100 my-3" (click)="addProductDetailsToCart(productDetails._id,element)" #element>Add To Cart</button>
+            </div>
+        </div>
+        
+    </div>
+</section>
